@@ -87,6 +87,16 @@ const map = L.map('map', {
 	layers: [osm, cities]
 });
 
+
+
+var latlngs = [[40, -6.8],[40, -2],[39.5, -2],[39.5, -0.3]];
+
+var polyline = L.polyline(latlngs, {color: 'black'}).addTo(map);
+
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds());
+
+
 const baseLayers = {
 	'OpenStreetMap': osm,
 	'OpenStreetMap.HOT': osmHOT
